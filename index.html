@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT Local</title>
+  <meta name="description"
+    content="Proyecto con JavaScript, desarrollaremos nuestro propio ChatGPT 2.0 con HTML, CSS y JavaScript. Este chat estará disponible de forma local">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main>
+    <ul>
+    </ul>
+  </main>
+
+  <form>
+    <input type="text" placeholder="Escribe un mensaje">
+    <button disabled type="submit">Enviar</button>
+  </form>
+
+  <small>
+    &nbsp;
+  </small>
+
+  <template id="message-template">
+    <li class="message">
+      <span></span>
+      <p></p>
+    </li>
+  </template>
+</body>
+
+<!-- 
+type="module" para poder usar import y export si no cargo el archivo script.js
+Tambien no me rompe si lo pogno en el head 
+-->
+<script type="module" src="script.js" defer></script>
+
+</html>
