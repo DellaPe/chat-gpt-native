@@ -1,7 +1,8 @@
 import { CreateMLCEngine  } from "https://esm.run/@mlc-ai/web-llm";
 
-const SELECTED_MODEL = "gemma-2b-it-q4f32_1-MLC"
+const SELECTED_MODEL = "Phi-3-mini-4k-instruct-q4f32_1-MLC-1k"
 const allMessages = [];
+let isLoading = true;
 
 // $ = Elemento do DOM
 const $ = el => document.querySelector(el);
@@ -22,8 +23,11 @@ const engine = await CreateMLCEngine (
       
       if (info.progress === 1) {
         $button.removeAttribute('disabled')
-        addMessage("¡Hola! Soy un ChatGPT que se ejecuta completamente en tu navegador. ¿En qué puedo ayudarte hoy?", 'bot')
         $input.focus()
+        if (isLoading) {
+          addMessage("¡Hola! Soy un ChatGPT que se ejecuta completamente en tu navegador. ¿En qué puedo ayudarte hoy?", 'bot')
+          isLoading = false
+        }
       }
     }
   }
